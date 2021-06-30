@@ -1,0 +1,37 @@
+.nav {
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    
+    height: 50px;
+}
+@media only screen and (max-width: 100px) {
+    body {
+      background-color: lightblue;
+      flex-direction: column;
+    }
+  }
+
+.nav > div > a {
+    color: rgba(0, 247, 255,  0.8);
+    font-size: 25px;
+}
+
+.nav >div {
+    border: 2px double blue;
+    padding: 3px;
+    margin: 7px;
+}
+
+.nav > div:hover{
+
+    background-color: rgb(107, 107, 107);
+    color: white;
+}
+
+body {
+    margin : 0px;
+}
+#sign{
+    margin-left: 70%  ;
+}
