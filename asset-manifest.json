@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/hartik123/Todo-List.git/static/css/main.563e9787.chunk.css",
-    "main.js": "/hartik123/Todo-List.git/static/js/main.e5ef2f5d.chunk.js",
-    "main.js.map": "/hartik123/Todo-List.git/static/js/main.e5ef2f5d.chunk.js.map",
-    "runtime-main.js": "/hartik123/Todo-List.git/static/js/runtime-main.6cce1012.js",
-    "runtime-main.js.map": "/hartik123/Todo-List.git/static/js/runtime-main.6cce1012.js.map",
-    "static/js/2.4cc85630.chunk.js": "/hartik123/Todo-List.git/static/js/2.4cc85630.chunk.js",
-    "static/js/2.4cc85630.chunk.js.map": "/hartik123/Todo-List.git/static/js/2.4cc85630.chunk.js.map",
-    "index.html": "/hartik123/Todo-List.git/index.html",
-    "static/css/main.563e9787.chunk.css.map": "/hartik123/Todo-List.git/static/css/main.563e9787.chunk.css.map",
-    "static/js/2.4cc85630.chunk.js.LICENSE.txt": "/hartik123/Todo-List.git/static/js/2.4cc85630.chunk.js.LICENSE.txt"
+    "main.css": "/Todo-List/static/css/main.563e9787.chunk.css",
+    "main.js": "/Todo-List/static/js/main.e5ef2f5d.chunk.js",
+    "main.js.map": "/Todo-List/static/js/main.e5ef2f5d.chunk.js.map",
+    "runtime-main.js": "/Todo-List/static/js/runtime-main.2579a415.js",
+    "runtime-main.js.map": "/Todo-List/static/js/runtime-main.2579a415.js.map",
+    "static/js/2.4cc85630.chunk.js": "/Todo-List/static/js/2.4cc85630.chunk.js",
+    "static/js/2.4cc85630.chunk.js.map": "/Todo-List/static/js/2.4cc85630.chunk.js.map",
+    "index.html": "/Todo-List/index.html",
+    "static/css/main.563e9787.chunk.css.map": "/Todo-List/static/css/main.563e9787.chunk.css.map",
+    "static/js/2.4cc85630.chunk.js.LICENSE.txt": "/Todo-List/static/js/2.4cc85630.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6cce1012.js",
+    "static/js/runtime-main.2579a415.js",
     "static/js/2.4cc85630.chunk.js",
     "static/css/main.563e9787.chunk.css",
     "static/js/main.e5ef2f5d.chunk.js"
