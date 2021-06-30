@@ -9,7 +9,7 @@ If you want to try my website click the link
 The Snapshots of website is provided below to get idea fastely.
 
 
-**Image1 **
+**Image1**
 ![Todo-List img](https://user-images.githubusercontent.com/59147991/123962095-b51d0380-d9ce-11eb-9a61-c8529e564da1.png)
 
 **Image 2**
