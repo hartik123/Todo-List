@@ -3,7 +3,7 @@
 Frontend:- Developed using Html, Css, javaScript, React.
 Introduction:- It is a simple Todo list which can add daily tasks and delete tasks wahtever you want delete.
 
-If you want to try my website click below link
+If you want to try my website click the link
 [Todo-List application](https://hartik123.github.io/Todo-List/)
 
 The Snapshots of website is provided below to get idea fastely.
