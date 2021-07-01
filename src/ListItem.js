@@ -3,25 +3,46 @@ import './ListItem.css';
 import {BsFillTrashFill} from 'react-icons/bs';
 import FlipMove from 'react-flip-move';
 import {useEffect,useState} from 'react';
-
+import EditIcon from '@material-ui/icons/Edit';
+import { IconButton } from '@material-ui/core';
+import FormDialog from './FormDialog';
  
 function ListItem(props){
+    const [open,setOpen]=useState(false)
 
-    const listItems = props.items.map(item => {
-        return <div className="list" key={item._id}><p><input type="text" id={item._id} value={item.text}
-        onChange ={(e) => {
-            props.setUpdate(e.target.value, item._id)
-        }} />
-        
-        <span><BsFillTrashFill className="trash" onClick={()=> props.deleteItem(item._id)} /></span></p></div>
+    const handleClick=()=>{
+        setOpen(!open)
+    }
+
+    const update=()=>{
+        console.log('In Update func')
+        setOpen(false);
+    }
+
+    const listItems = props.items.map(item => {    
+        return <div className="list" key={item._id}>
+        <p>
+          <input type="text" id={item._id} value={item.text} />
+          <span style={{marginRight:'40px'}}>
+              <IconButton onClick={handleClick}>
+                    <EditIcon />
+              </IconButton>
+              {open && <FormDialog update={update} setUpdate={props.setUpdate} id={item._id}/>}
+          </span>
+          <span>
+              <BsFillTrashFill className="trash" onClick={()=> props.deleteItem(item._id)} />
+          </span>
+        </p>
+        </div>
         });
 
+
     return(
-        <>
+        <div>
         <FlipMove duration={300} easing="ease-in-out">
         {listItems}
         </FlipMove>
-        </>        
+        </div>        
     );
 }
 
