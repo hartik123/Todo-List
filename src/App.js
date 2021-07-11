@@ -1,101 +1,63 @@
-// import React from 'react';
-// import Calculator from './component/calculator';
-
-
-
-
-
-
-// export default Calculator;
-
-
-
-import React from 'react';
-import './App.css';
+import axios from 'axios';
+import React from 'react'
+import {useState,useEffect} from 'react';
 import ListItem from './ListItem';
+import './App.css';
 
-class App extends React.Component{
-    constructor(props)
-    {
-        super(props)
-        this.state ={
-            items: [],
-            currentItem: {
-                text: '',
-                key: ''
-            }
+
+function App() {
+    const [text,setText]=useState('');
+
+    const [items,setItems]=useState([]);
+    const [loading,setLoading]=useState(true);
+
+    useEffect(()=>{
+        const getData=async ()=>{
+            const {data}=await axios.get('/task')
+            console.log(data);
+            setItems(data);
+            setLoading(false)
         }
-        this.handleInput = this.handleInput.bind(this);
-        this.addItem = this.addItem.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
-        this.setUpdate = this.setUpdate.bind(this);
+        getData();
+    },[loading]);
+
+    // functions
+    const handleInput=(e)=>{
+        setText(e.target.value);
     }
 
-    handleInput(e){
-        this.setState({
-            currentItem: {
-                text: e.target.value,
-                key: Date.now()
-            }
-        })
-    }
-
-    addItem(e){
+    const addItem=async (e)=>{
         e.preventDefault();
-        const newItem = this.state.currentItem;
-        if(newItem.text!==''){
-            const newItems = [...this.state.items, newItem];
-            this.setState({
-                items: newItems,
-                currentItem: {
-                    text: '',
-                    key: ''
-                }
-            });
-        }
-        
-    }
-    deleteItem(key){
-        const filterdItems= this.state.items.filter(item => 
-            item.key!==key)
-            this.setState({
-                items: filterdItems
-            });
+        console.log(text);
+        setText('');
+        const {data}=await axios.post('/task',{text})
+        setLoading(true)
     }
 
-    setUpdate(text, key){
-        const items = this.state.items;
-
-
-        items.map(item => {
-            if(item.key===key)
-            {
-                item.text = text;
-            }
-        })
-
-
-        this.setState({
-            items: items
-        })
-
+    const deleteItem= async (id)=>{
+        const {data}=await axios.delete(`/task/${id}`);
+        setLoading(true)
     }
-    render(){
-        return(
-            <div className="app">
-                <header>
-                <form id="to-do-form" onSubmit={this.addItem}>
+    const setUpdate=async (val,id)=>{
+         console.log(`${val}`)
+         const {data}=await axios.put(`/task/${id}`,{text:val});
+         setLoading(true);
+    }
+    return (
+        <div className="app">
+            <header>
+                <form id="to-do-form" onSubmit={(e)=>addItem(e)}>
                     <input type="text" placeholder="Enter text"
-                    value={this.state.currentItem.text} onChange={this.handleInput} />
+                    value={text} onChange={(e)=>handleInput(e)} />
                     <button type="submit">Add</button>
                 </form>
             </header>
-            <ListItem items={this.state.items} deleteItem = {this.deleteItem}
-            setUpdate = {this.setUpdate}
+            <ListItem items={items} deleteItem = {deleteItem}
+               setUpdate = {setUpdate}
             />
-            </div>
-        );
-    }
+        </div>
+        
+    )
 }
 
-export default App;    
+export default App

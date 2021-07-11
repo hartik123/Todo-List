@@ -10,6 +10,7 @@
 .list p {
     padding: 10px;
     position: relative;
+    font-weight: bold;
 }
 
 .list p span{

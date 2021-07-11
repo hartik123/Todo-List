@@ -1,12 +1,17 @@
 # _**Todo-List**_
 
-Frontend:- Developed using Html, Css, javaScript, React.
+`Frontend`:- Developed using Html, Css, javaScript, React.
+<br/>
+<br />
+`Backend` :Devloped using Node JS and MongoDB as a database
+<br/>
+<br />
 Introduction:- It is a simple Todo list which can add daily tasks and delete tasks wahtever you want delete.
 
 If you want to try my website click the link
 [Todo-List application](https://hartik123.github.io/Todo-List/)
 
-The Snapshots of website is provided below to get idea fastely.
+The Snapshots of website is provided below to get quick idea
 
 
 **Image1**
